@@ -31,20 +31,20 @@
 }
 
 .contour {
-  transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+  transition: fill 0.3s linear, stroke 0.3s linear;
 }
 .core {
-  transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s linear;
 }
 
 .main-body {
-  transition: fill 0.3s ease-in-out 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .sparks {
   fill: var(--spark-fill);
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s linear;
 }
 .heart:hover .core {
   fill: var(--heart-contour);
@@ -53,18 +53,40 @@
 
 .heart:hover .main-body {
   fill: var(--heart-contour);
+
   transition: fill 0.3s linear 0.05s;
 }
 
 .heart:active .core {
   fill: var(--heart-fill);
-  transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s linear;
 }
 
 .heart:active .main-body {
   fill: var(--heart-fill);
-  transition: fill 0.3s ease-in-out 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
+
+.heart:focus .core {
+  fill: var(--page-background-color);
+  transition: fill 0.3s linear;
+}
+
+.heart:focus .main-body {
+  fill: var(--page-background-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.heart:not(:hover) .core {
+  fill: var(--page-background-color);
+  transition: fill 0.3s linear.03s;
+}
+
+.heart:not(:hover) .main-body {
+  fill: var(--page-background-color);
+  transition: fill 0.3s linear;
+}
+
 .like-icon.is-liked .core {
   fill: var(--heart-fill);
   transition: fill 0.3s linear;
